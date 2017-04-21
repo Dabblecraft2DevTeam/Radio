@@ -14,11 +14,11 @@ public class Radio {
 
 	public static Pattern tier = Pattern.compile("Tier: (\\d)");
 	public static Pattern radius = Pattern.compile("Radius: (\\d+)");
-	public static Pattern frequency = Pattern.compile("Frequency: (\\d{3})");
+	public static Pattern frequency = Pattern.compile("Frequency: (\\d{4})");
 	public static Pattern state = Pattern.compile("State: (OFF|ON)");
 
 	public static ItemStack createRadio(int tier) {
-		return createRadio(tier, false, 000);
+		return createRadio(tier, false, 0000);
 	}
 
 	public static ItemStack createRadio(int tier, boolean state, int frequency) {
@@ -138,7 +138,7 @@ public class Radio {
 	 * @return
 	 */
 	public static String getFrequencyString(int freq) {
-		return String.format(ChatColor.GRAY + "Frequency: " + ChatColor.GOLD + "%03d", freq);
+		return String.format(ChatColor.GRAY + "Frequency: " + ChatColor.GOLD + "%04d", freq);
 	}
 
 	/**
